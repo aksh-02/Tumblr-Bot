@@ -135,10 +135,10 @@ def get_posts(rsubs, plim=10, lim=30):
 # Main
 
 # Tumblr Creds
-cons_key = "a8Jz1VckkM5dt7wJBB1Xbz8VnmTjIc1lmz7XRbMZUn15HbruJg"
-cons_secret = "DdNK2p4tmnAnRg0AMsTvKhaTODa7rEA5kPkiy2c7QtAxFHDXlB"
-oauth_token = "2ksUlNCa1PZr5WWMF5TdoZDrCIpTh7YKPBsECfjG9CfOSsRXMJ"
-oauth_secret = "8Mu7OSMVwhxJmjqqme2fVxv9ErWtIHCe4damEdMExMTIPoGsp1"
+cons_key = ""
+cons_secret = ""
+oauth_token = ""
+oauth_secret = ""
 
 client = pytumblr.TumblrRestClient(
     cons_key,
@@ -148,16 +148,16 @@ client = pytumblr.TumblrRestClient(
 )
 
 # Reddit Creds
-cid = "zpJG_1eV-QxsOQ"
-csecret = "qeFtBSBOFYjz33uHBqCOc7QYXgs"
-uagent = "my app"
+cid = ""
+csecret = ""
+uagent = ""
 
 reddit = praw.Reddit(client_id=cid, client_secret=csecret, user_agent=uagent)
 
-blogName = "petthedamndog"  # Put your blogname here
-subs = ["PetTheDamnDog"]
+blogName = ""  # Put your blogname here
+subs = []
 shuffle(subs)
-my_tags = ["Cut Dogs", "Friends4ever"] # Add your tags here
+my_tags = [] # Add your tags here
 ntags = 2 # Number of tags you want to add to each post
 rsubs = '+'.join(subs)
 
@@ -167,32 +167,3 @@ print(f"{len(prev_posts)} previous posts found in log.")
 get_posts(rsubs, 1) # The second argument can be number of posts you'd want to do each time, taking into account the api limit
 
 
-
-"""
-Official API limit
-300 API calls per minute, per IP address.
-18,000 API calls per hour, per IP address.
-432,000 API calls per day, per IP address.
-1,000 API calls per hour, per consumer key.
-5,000 API calls per day, per consumer key.
-250 new posts (including reblogs) per day, per user.
-150 images uploaded per day, per user.
-200 follows per day, per user.
-1,000 likes per day, per user.
-10 new blogs per day, per user.
-10 videos uploaded per day, per user.
-5 minutes of total video uploaded per day, per user.
-"""
-
-"""
-{'consumer_key': 'a8Jz1VckkM5dt7wJBB1Xbz8VnmTjIc1lmz7XRbMZUn15HbruJg', 'consumer_secret': 'DdNK2p4tmnAnRg0AMsTvKhaTODa7rEA5kPkiy2c7QtAxFHDXlB', 'oauth_token': '2ksUlNCa1PZr5WWMF5TdoZDrCIpTh7YKPBsECfjG9CfOSsRXMJ', 'oauth_token_secret': '8Mu7OSMVwhxJmjqqme2fVxv9ErWtIHCe4damEdMExMTIPoGsp1'}
-
-my app
-zpJG_1eV-QxsOQ
-secret :qeFtBSBOFYjz33uHBqCOc7QYXgs
-
-petthedamndog
-
-How to Schedule Tasks
-https://youtu.be/n2Cr_YRQk7o
-"""
